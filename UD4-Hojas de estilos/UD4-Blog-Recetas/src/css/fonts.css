@@ -1,11 +1,18 @@
+<<<<<<< HEAD
 
 /**
  *
  * Estilo para importar las fuentes
+=======
+/**
+ *
+ * Estilos para importar las fuentes
+>>>>>>> refs/remotes/origin/main
  *
  */
 
 @font-face {
+<<<<<<< HEAD
    font-family: 'outfit';
    src: url(../../assets/fonts/outfit/static/Outfit-Regular.ttf) format(truetype);
    font-style: normal;
@@ -31,4 +38,31 @@
    src: url(../../assets/fonts/young-serif/YoungSerif-Regular.ttf) format(truetype);
    font-style: normal;
    font-weight: normal;
+=======
+  font-family: 'outfit';
+  src: url(../../assets/fonts/outfit/static/Outfit-Regular.ttf) format(truetype);
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'outfit';
+  src: url(../../assets/fonts/outfit/static/Outfit-SemiBold.ttf) format(truetype);
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'outfit';
+  src: url(../../assets/fonts/outfit/static/Outfit-Bold.ttf) format(truetype);
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'young-serif';
+  src: url(../../assets/fonts/young-serif/YoungSerif-Regular.ttf) format(truetype);
+  font-style: normal;
+  font-weight: normal;
+>>>>>>> refs/remotes/origin/main
 }
