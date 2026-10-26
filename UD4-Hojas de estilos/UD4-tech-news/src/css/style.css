@@ -48,6 +48,21 @@ img{
 nav ul {
   list-style: none;
 }
+
+.btn{
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  color: white;
+  background-color: var(--color-terciario);
+  border: 1px solid var(--color-terciario);
+  display: inline-block;
+}
+
+.icono{
+  max-width: 32px;
+  display: inline-block;
+}
+
 /*=============================================
 =            Estilos del header            =
 =============================================*/
@@ -109,6 +124,81 @@ main{
 }
 
 
+/*----------  Estilo de novedades  ----------*/
+
+#novedades{
+  padding: 2rem;
+  background-color: var(--color-secundario);
+  color: var(--color-secundario);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: .9rem;
+}
+
+
 
 /*=====  End of Estilos para el main  ======*/
+
+
+
+/*=============================================
+=            EStilo de las cards            =
+=============================================*/
+
+.cards{
+  display: flex;
+  /* flex-direction: column;*/
+}
+
+.card{
+  max-width: 450px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card figure{
+  /* max-width: 200px;
+  max-height: 254px; */
+  width: 30%;
+  overflow: hidden;
+}
+
+.card-content{
+  width: 70%;
+}
+
+.card .numero{
+  color: var(--color-terciario);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.card .titulo{
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-secundario);
+}
+
+/*=====  End of EStilo de las cards  ======*/
+
+
+/*=============================================
+=            EStilos del footer            =
+=============================================*/
+footer{
+  display: flex;
+}
+
+.redes{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+/*=====  End of EStilos del footer  ======*/
+
 
