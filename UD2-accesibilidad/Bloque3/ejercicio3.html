@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 3 - Siglas y Fechas Accesibles</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>Terminología accesibilidad de la Web</h1>
+  <section>
+    <ul class="cards">
+      <li class="card">
+        <p style="font-size: 1.5rem;font-weight: bold;">Estándares Web</p>
+        <!-- FALLO: El lector de pantalla intentará leer "WCAG" como una sola palabra impronunciable -->
+        <p>El estándar <span class="badge-sigla"><span aria-hidden="true">WCAG</span>
+          <span class="sr-only">W C A G</span></span> es importante.</p>
+        <!-- FALLO: El lector leerá "28 barra 09 barra 2026" en lugar de pronunciar la fecha de forma fluida -->
+        <p>Última revisión: <time datetime="2026-09-28">28 de septiembre de 2026</time></p>
+      </li>
+      <li class="card">
+        <p class="badge-sigla">WAI</p>
+        <p>Una de las principales iniciativas del W3C es la WAI (Web Accessibility Initiative) que se encarga del
+          desarrollo de
+          normas de accesibilidad.
+        </p>
+      </li>
+    </ul>
+  </section>
+</body>
+
+</html>
