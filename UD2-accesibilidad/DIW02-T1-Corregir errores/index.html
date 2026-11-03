@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Accesibilidad - Ejemplos corregidos</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <h1>Accesibilidad - Ejemplos corregidos</h1>
+
+      <nav aria-label="Menú principal">
+        <ul class="menu">
+          <li>
+            <button
+              type="button"
+              class="menu-toggle"
+              aria-expanded="false"
+              aria-controls="submenu-1"
+              aria-haspopup="true"
+            >
+              Menú 1
+            </button>
+
+            <ul id="submenu-1" class="submenu" hidden>
+              <li><a href="#">Submenú 1.1</a></li>
+              <li><a href="#">Submenú 1.2</a></li>
+              <li><a href="#">Submenú 1.3</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <button
+              type="button"
+              class="menu-toggle"
+              aria-expanded="false"
+              aria-controls="submenu-2"
+              aria-haspopup="true"
+            >
+              Menú 2
+            </button>
+
+            <ul id="submenu-2" class="submenu" hidden>
+              <li><a href="#">Submenú 2.1</a></li>
+              <li><a href="#">Submenú 2.2</a></li>
+              <li><a href="#">Submenú 2.3</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <hr />
+
+    <main>
+      <section aria-labelledby="titulo-formularios">
+        <h2 id="titulo-formularios">Formularios</h2>
+
+        <form method="post" action="#">
+          <fieldset>
+            <legend>Información personal</legend>
+
+            <p>
+              <label for="nombre">Nombre</label><br />
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                autocomplete="name"
+                required
+              />
+            </p>
+
+            <p>
+              <label for="correo">Correo electrónico</label><br />
+              <input
+                type="email"
+                id="correo"
+                name="correo"
+                autocomplete="email"
+                required
+              />
+            </p>
+
+            <p>
+              <label for="pagina">Página personal</label><br />
+              <input
+                type="url"
+                id="pagina"
+                name="pagina"
+                autocomplete="url"
+                aria-describedby="ayuda-pagina"
+              />
+              <span id="ayuda-pagina" class="ayuda">
+                Escribe la dirección completa, por ejemplo https://ejemplo.es
+              </span>
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Otra información</legend>
+
+            <p>
+              <label for="fecha">Fecha</label><br />
+              <input type="date" id="fecha" name="fecha" />
+            </p>
+
+            <p>
+              <label for="mes">Mes</label><br />
+              <input type="month" id="mes" name="mes" />
+            </p>
+
+            <p>
+              <label for="semana">Semana</label><br />
+              <input type="week" id="semana" name="semana" />
+            </p>
+
+            <p>
+              <label for="tiempo">Tiempo</label><br />
+              <input type="time" id="tiempo" name="tiempo" />
+            </p>
+
+            <p>
+              <label for="fecha-tiempo">Fecha y tiempo</label><br />
+              <input
+                type="datetime-local"
+                id="fecha-tiempo"
+                name="fecha-tiempo"
+              />
+            </p>
+
+            <p>
+              <label for="numero">Número entre -10 y 10</label><br />
+              <input
+                type="number"
+                id="numero"
+                name="numero"
+                min="-10"
+                max="10"
+                value="0"
+              />
+            </p>
+
+            <p>
+              <label for="intervalo">Intervalo entre 0 y 10</label><br />
+              <input
+                type="range"
+                id="intervalo"
+                name="intervalo"
+                min="0"
+                max="10"
+                step="1"
+                value="5"
+              />
+              <output for="intervalo" id="valor-intervalo">5</output>
+            </p>
+
+            <p>
+              <label for="telefono">Teléfono</label><br />
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                autocomplete="tel"
+              />
+            </p>
+
+            <p>
+              <label for="busqueda">Búsqueda</label><br />
+              <input type="search" id="busqueda" name="busqueda" />
+            </p>
+
+            <p>
+              <label for="color">Color favorito</label><br />
+              <input type="color" id="color" name="color" value="#005a9c" />
+            </p>
+          </fieldset>
+
+          <p>
+            <input type="reset" value="Borrar" />
+            <input type="submit" value="Enviar" />
+          </p>
+        </form>
+      </section>
+
+      <hr />
+
+      <section aria-labelledby="titulo-mapas">
+        <h2 id="titulo-mapas">Mapas de imágenes</h2>
+
+        <img
+          src="img/mapa_sudamerica.jpg"
+          alt="Mapa de Sudamérica con enlaces a los artículos de Wikipedia de Brasil, Uruguay y Argentina"
+          usemap="#image-map"
+        />
+
+        <map name="image-map">
+          <area
+            target="_blank"
+            alt="Abrir el artículo de Wikipedia sobre Brasil"
+            title="Brasil"
+            href="https://es.wikipedia.org/wiki/Brasil"
+            coords="86,158,109,133,111,96,138,99,168,73,168,88,178,100,201,90,214,90,222,78,230,95,218,113,230,115,232,106,265,117,309,133,327,145,322,169,306,193,304,225,297,248,276,257,289,254,253,266,251,277,253,295,235,317,227,324,200,307,219,284,212,274,211,264,192,252,191,237,191,228,187,217,177,214,171,201,150,190,134,176,143,185,122,177,107,180,106,171,97,169,88,164,90,139,94,146,100,139,110,131"
+            shape="poly"
+          />
+
+          <area
+            target="_blank"
+            alt="Abrir el artículo de Wikipedia sobre Uruguay"
+            title="Uruguay"
+            href="https://es.wikipedia.org/wiki/Uruguay"
+            coords="202,309,231,326,225,342,211,337,200,334,200,321"
+            shape="poly"
+          />
+
+          <area
+            target="_self"
+            alt="Abrir el artículo de Wikipedia sobre Argentina"
+            title="Argentina"
+            href="https://es.wikipedia.org/wiki/Argentina"
+            coords="136,255,153,260,161,252,173,265,195,278,191,286,209,288,199,305,199,318,202,338,211,352,205,364,189,369,186,379,171,380,177,387,179,398,180,404,171,415,182,427,173,443,177,452,167,449,151,441,147,425,148,404,134,386,132,356,135,334,122,317"
+            shape="poly"
+          />
+        </map>
+      </section>
+
+      <hr />
+
+      <section aria-labelledby="titulo-imagenes">
+        <h2 id="titulo-imagenes">Imágenes</h2>
+
+        <p>
+          <a href="#">
+            <img src="./img/flecha-izq.gif" alt="Ir a la página anterior" />
+          </a>
+
+          <a href="#">Índice</a>
+
+          <a href="#">
+            <img src="./img/flecha-der.gif" alt="Ir a la página siguiente" />
+          </a>
+        </p>
+
+        <p>
+          Menú:
+          <br /><br />
+          <a href="#">
+            <img src="./img/logo.png" alt="" aria-hidden="true" />
+            Únete
+          </a>
+          <br />
+          <a href="#">
+            <img src="./img/logo.png" alt="" aria-hidden="true" />
+            Equipo
+          </a>
+          <br />
+          <a href="#">
+            <img src="./img/logo.png" alt="" aria-hidden="true" />
+            Contacto
+          </a>
+          <br />
+          <a href="#">
+            <img src="./img/logo.png" alt="" aria-hidden="true" />
+            Síguenos
+          </a>
+        </p>
+
+        <p>
+          Teléfono de contacto:
+          <img src="./img/telefono.gif" alt="" aria-hidden="true" />
+          <a href="tel:+34000000000">000 000 000</a>
+        </p>
+      </section>
+
+      <hr />
+
+      <section aria-labelledby="titulo-enlaces">
+        <h2 id="titulo-enlaces">Enlaces</h2>
+
+        <article>
+          <h3>A mi hija mayor se le ha caído su primer diente</h3>
+
+          <p>
+            Estábamos desayunando cuando de repente sucedió.
+            <a href="#"
+              >Más información sobre el primer diente de mi hija mayor.</a
+            >
+          </p>
+        </article>
+
+        <article>
+          <h3>A mi hija pequeña le ha salido su primera muela</h3>
+
+          <p>
+            Después de comer, la pequeña dijo que le molestaba la boca.
+            <a href="#"
+              >Más información sobre la primera muela de mi hija pequeña.</a
+            >
+          </p>
+        </article>
+      </section>
+
+      <hr />
+
+      <section aria-labelledby="titulo-organizacion">
+        <h2 id="titulo-organizacion">Organización</h2>
+
+        <article>
+          <h3>Nombre de la empresa</h3>
+          <p>Eslogan de la empresa</p>
+
+          <h4>Noticias</h4>
+
+          <article>
+            <h5>Noticia 1</h5>
+            <p>Desarrollo de la noticia 1</p>
+          </article>
+
+          <article>
+            <h5>Noticia 2</h5>
+            <p>Desarrollo de la noticia 2</p>
+          </article>
+        </article>
+      </section>
+
+      <hr />
+
+      <section aria-labelledby="titulo-diagramas">
+        <h2 id="titulo-diagramas">Diagramas</h2>
+
+        <figure>
+          <img
+            src="./img/disenio-centrado-usuario.png"
+            alt="Diagrama de Diseño Centrado en el Usuario"
+            aria-describedby="descripcion-diagrama"
+          />
+
+          <figcaption id="descripcion-diagrama">
+            El diseño centrado en el usuario consiste en comprender a las
+            personas usuarias, definir requisitos, crear soluciones, evaluarlas
+            con ellas y mejorar el resultado de forma iterativa.
+          </figcaption>
+        </figure>
+      </section>
+
+      <hr />
+
+      <section aria-labelledby="titulo-tablas">
+        <h2 id="titulo-tablas">Tablas</h2>
+
+        <table>
+          <caption>
+            Horario semanal de la clase 3.º A
+          </caption>
+
+          <thead>
+            <tr>
+              <th scope="col">Hora</th>
+              <th scope="col">Lunes</th>
+              <th scope="col">Martes</th>
+              <th scope="col">Miércoles</th>
+              <th scope="col">Jueves</th>
+              <th scope="col">Viernes</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th scope="row">10:00</th>
+              <td>Matemáticas</td>
+              <td>Matemáticas</td>
+              <td>Matemáticas</td>
+              <td>Matemáticas</td>
+              <td>Matemáticas</td>
+            </tr>
+
+            <tr>
+              <th scope="row">11:00</th>
+              <td>Lengua</td>
+              <td>Lengua</td>
+              <td>Lengua</td>
+              <td>Lengua</td>
+              <td>Lengua</td>
+            </tr>
+
+            <tr>
+              <th scope="row">12:00</th>
+              <td>Ciencias Sociales</td>
+              <td>Ciencias Naturales</td>
+              <td>Ciencias Sociales</td>
+              <td>Ciencias Naturales</td>
+              <td>Deporte</td>
+            </tr>
+
+            <tr>
+              <th scope="row">13:00</th>
+              <td>Inglés</td>
+              <td>Inglés</td>
+              <td>Inglés</td>
+              <td>Inglés</td>
+              <td>Música</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>En esta tabla puede verse el horario de la clase 3.º A.</p>
+      </section>
+
+      <hr />
+
+      <section aria-labelledby="titulo-contraste">
+        <h2 id="titulo-contraste">Contraste</h2>
+
+        <p class="importante">Este texto es importante</p>
+      </section>
+
+      <hr />
+
+      <section aria-labelledby="titulo-tooltips">
+        <h2 id="titulo-tooltips">WAI-ARIA - Tooltips</h2>
+
+        <form>
+          <fieldset>
+            <legend>Formulario de entrada</legend>
+
+            <p>
+              <label for="username">Usuario</label><br />
+              <input
+                type="text"
+                id="username"
+                name="username"
+                required
+                aria-describedby="ayuda-usuario"
+              />
+              <span id="ayuda-usuario" class="ayuda">
+                Tu usuario es tu correo electrónico.
+              </span>
+            </p>
+
+            <p>
+              <label for="password">Contraseña</label><br />
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                aria-describedby="ayuda-password"
+              />
+              <span id="ayuda-password" class="ayuda">
+                Tu contraseña debe mantenerse secreta.
+              </span>
+            </p>
+
+            <button type="submit">Enviar</button>
+          </fieldset>
+        </form>
+      </section>
+
+      <hr />
+
+      <section aria-labelledby="titulo-random">
+        <h2 id="titulo-random">WAI-ARIA - Botón que actualiza un valor</h2>
+
+        <button id="obtener-random" type="button">
+          Obtener número aleatorio
+        </button>
+
+        <p>
+          Número actual:
+          <span id="random" role="status" aria-live="polite">0</span>
+        </p>
+      </section>
+
+      <hr />
+
+      <section aria-labelledby="titulo-desplegable">
+        <h2 id="titulo-desplegable">WAI-ARIA - Desplegables</h2>
+
+        <button
+          id="titulo-desplegable"
+          type="button"
+          aria-expanded="false"
+          aria-controls="desplegable"
+        >
+          Despliegame
+        </button>
+
+        <div id="desplegable" hidden>
+          <p>Aquí estoy... ^__^</p>
+        </div>
+      </section>
+
+      <hr />
+
+      <section aria-labelledby="titulo-tabs">
+        <h2 id="titulo-tabs">WAI-ARIA - Pestañas</h2>
+
+        <ul class="tablist" role="tablist" aria-label="Secciones de ejemplo">
+          <li role="presentation">
+            <button
+              id="tab1"
+              type="button"
+              class="tab selected"
+              role="tab"
+              aria-selected="true"
+              aria-controls="section1"
+            >
+              Sección 1
+            </button>
+          </li>
+
+          <li role="presentation">
+            <button
+              id="tab2"
+              type="button"
+              class="tab"
+              role="tab"
+              aria-selected="false"
+              aria-controls="section2"
+              tabindex="-1"
+            >
+              Sección 2
+            </button>
+          </li>
+        </ul>
+
+        <div
+          id="section1"
+          class="tabpanel"
+          role="tabpanel"
+          aria-labelledby="tab1"
+          tabindex="0"
+        >
+          <p>Este es el cuerpo de la sección UNO.</p>
+        </div>
+
+        <div
+          id="section2"
+          class="tabpanel"
+          role="tabpanel"
+          aria-labelledby="tab2"
+          tabindex="0"
+          hidden
+        >
+          <p>Este es el cuerpo de la sección DOS.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="lib/jquery.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
